@@ -25,14 +25,18 @@ export default function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
       initialRouteName="Home"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}
+      tabBarOptions={{
+        activeTintColor: "#cc0033",
+        inactiveTintColor: "grey",
+        showIcon: true,
+      }}
     >
       <BottomTab.Screen
         name="Home"
         component={HomeNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="ios-code" color={color} />
+            <TabBarIcon name="ios-home" color={color} />
           ),
         }}
       />
@@ -41,7 +45,7 @@ export default function BottomTabNavigator() {
         component={MatchesNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="ios-code" color={color} />
+            <TabBarIcon name="ios-hand" color={color} />
           ),
         }}
       />
@@ -50,7 +54,7 @@ export default function BottomTabNavigator() {
         component={MessagesNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="ios-code" color={color} />
+            <TabBarIcon name="ios-chatbubbles" color={color} />
           ),
         }}
       />
@@ -59,7 +63,7 @@ export default function BottomTabNavigator() {
         component={ProfileNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="ios-code" color={color} />
+            <TabBarIcon name="ios-contact" color={color} />
           ),
         }}
       />

@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View } from "react-native";
 
-class HomeScreen extends React.Component {
+class MessagesScreen extends React.Component {
   render() {
     return (
       <View>
@@ -11,4 +11,4 @@ class HomeScreen extends React.Component {
   }
 }
 
-export default HomeScreen;
+export default MessagesScreen;

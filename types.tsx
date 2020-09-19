@@ -25,3 +25,5 @@ export type MessagesParamList = {
 export type ProfileParamList = {
   ProfileScreen: undefined;
 };
+
+//export type CardsParamList = {};

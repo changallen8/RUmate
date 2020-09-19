@@ -28,7 +28,7 @@ export default function BottomTabNavigator() {
       tabBarOptions={{
         activeTintColor: "#cc0033",
         inactiveTintColor: "grey",
-        showIcon: true,
+        //showIcon: true,
       }}
     >
       <BottomTab.Screen

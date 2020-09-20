@@ -10,6 +10,11 @@ export type BottomTabParamList = {
   Profile: undefined;
 };
 
+export type DetailsTabParamList = {
+  Home: undefined;
+  Details: undefined;
+};
+
 export type HomeParamList = {
   HomeScreen: undefined;
 };
@@ -24,6 +29,10 @@ export type MessagesParamList = {
 
 export type ProfileParamList = {
   ProfileScreen: undefined;
+};
+
+export type DetailsParamList = {
+  DetailsScreen: undefined;
 };
 
 //export type CardsParamList = {};

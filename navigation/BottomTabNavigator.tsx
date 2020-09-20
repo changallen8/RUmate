@@ -9,6 +9,7 @@ import HomeScreen from "../screens/HomeScreen";
 import MatchesScreen from "../screens/MatchesScreen";
 import MessagesScreen from "../screens/MessagesScreen";
 import ProfileScreen from "../screens/ProfileScreen";
+import DetailsScreen from "../screens/DetailsScreen";
 import {
   BottomTabParamList,
   HomeParamList,
@@ -87,7 +88,7 @@ function HomeNavigator() {
       <HomeStack.Screen
         name="HomeScreen"
         component={HomeScreen}
-        options={{ headerTitle: "Home" }}
+        options={{ headerTitle: "Details" }}
       />
     </HomeStack.Navigator>
   );

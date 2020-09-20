@@ -3,6 +3,8 @@ import { FlatList, StyleSheet, Text, View, Touchable } from "react-native";
 import { Card } from "../components/Card";
 import { Tile } from "react-native-elements";
 import Layout from "../constants/Layout";
+import HomeStack from "../navigation/HomeStack";
+import Navigation from "../navigation";
 
 export default function HomeScreen() {
   const [people, setPeople] = useState([
@@ -58,6 +60,8 @@ export default function HomeScreen() {
     },
   ]);
 
+  const pressHandler = () => {};
+
   return (
     <View>
       <FlatList
@@ -73,6 +77,7 @@ export default function HomeScreen() {
             captionStyle={styles.caption}
             containerStyle={styles.container}
             featured
+            onPress={pressHandler}
           />
         )}
       />
@@ -87,7 +92,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     width: Layout.window.width - 30,
-    height: "94%",
+    height: "95%",
     borderRadius: 20,
     overflow: "hidden", // this does magic
   },

@@ -1,18 +1,17 @@
 import React from "react";
-import { Platform, StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { Tile } from "react-native-elements";
 import Layout from "../constants/Layout";
 
-//const BOTTOM_BAR_HEIGHT = !Platform.isPad ? 29 : 49;
-//https://stackoverflow.com/a/50318831/6141587
+//const BOTTOM_BAR_HEIGHT = !Platform.isPad ? 29 : 49
 
-interface ICards {
-  pic: string;
+interface ICard {
+  pic: any;
   title: string;
   caption: string;
 }
 
-export const Card = ({ pic, title, caption }: ICards) => (
+export const Card = ({ pic, title, caption }: ICard) => (
   <Tile
     imageSrc={pic}
     imageContainerStyle={styles.imageContainer}
@@ -33,9 +32,9 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     width: Layout.window.width - 30,
-    height: 1, //Layout.window.height, //- BOTTOM_BAR_HEIGHT * 6,
+    height: Layout.window.height,
     borderRadius: 20,
-    overflow: "hidden",
+    overflow: "hidden", // this does magic
   },
   title: {
     position: "absolute",

@@ -1,91 +1,106 @@
-import React, { Component } from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import React from "react";
+import { Image, SafeAreaView, StyleSheet, View, Button } from "react-native";
+import { Divider, Icon, Text } from "react-native-elements";
+import Layout from "../constants/Layout";
 
-export default class ProfileScreen extends Component {
+/*const Social = (name: Object) => (
+  <Icon
+    name={name}
+    type="font-awesome"
+    containerStyle={styles.iconContainer}
+    size={32}
+  />
+);*/
+
+const pressHandler = () => {};
+
+class ProfileScreen extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.header}></View>
-        <Image
-          style={styles.avatar}
-          source={require("../assets/images/men/men1.jpg")}
-        />
-        <View style={styles.body}>
-          <View style={styles.bodyContent}>
-            <Text style={styles.name}>John Doe</Text>
-            <Text style={styles.info}>UX Designer / Mobile developer</Text>
-            <Text style={styles.description}>
-              Lorem ipsum dolor sit amet, saepe sapientem eu nam. Qui ne assum
-              electram expetendis, omittam deseruisse consequuntur ius an,
-            </Text>
-
-            <TouchableOpacity style={styles.buttonContainer}>
-              <Text>Option 1</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonContainer}>
-              <Text>Option 2</Text>
-            </TouchableOpacity>
-          </View>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.imageContainer}>
+          <Image
+            source={require("../assets/images/men/men10.jpg")}
+            style={styles.image}
+          />
         </View>
-      </View>
+        <Text h4 style={styles.name}>
+          {"Tony"}
+        </Text>
+        <Text style={styles.desc}>Junior, Off-Campus</Text>
+        <Divider style={styles.divider} />
+        <Text>
+          Interested in basketball, baseball, photography, and skateboarding
+        </Text>
+        {/* <Button onPress={pressHandler} title="Message Me" color="#cc0033" /> */}
+        <Divider style={styles.divider} />
+        <Text style={styles.desc}>Find me on Social here</Text>
+        <View style={styles.socialLinks}>
+          <Icon
+            name="snapchat"
+            type="font-awesome"
+            containerStyle={styles.iconContainer}
+            size={32}
+          />
+          <Icon
+            name="instagram"
+            type="font-awesome"
+            containerStyle={styles.iconContainer}
+            size={32}
+          />
+          <Icon
+            name="facebook-square"
+            type="font-awesome"
+            containerStyle={styles.iconContainer}
+            size={32}
+          />
+        </View>
+      </SafeAreaView>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  header: {
-    backgroundColor: "#cc0033",
-    height: 200,
-  },
-  avatar: {
-    width: 130,
-    height: 130,
-    borderRadius: 63,
-    borderWidth: 4,
-    borderColor: "white",
-    marginBottom: 10,
-    alignSelf: "center",
-    position: "absolute",
-    marginTop: 130,
-  },
-  name: {
-    fontSize: 22,
-    color: "#FFFFFF",
-    fontWeight: "600",
-  },
-  body: {
-    marginTop: 40,
-  },
-  bodyContent: {
+  container: {
     flex: 1,
     alignItems: "center",
-    padding: 30,
+  },
+  imageContainer: {
+    margin: 20,
+  },
+  image: {
+    width: Layout.window.width - 60, // device width - some margin
+    height: Layout.window.height / 2 - 60, // device height / 2 - some margin
+    borderRadius: 20,
   },
   name: {
-    fontSize: 28,
-    color: "#696969",
-    fontWeight: "600",
+    color: "#5E5E5E",
+    alignSelf: "flex-start",
+    marginLeft: 30,
   },
-  info: {
-    fontSize: 16,
-    color: "#00BFFF",
-    marginTop: 10,
+  desc: {
+    color: "#5E5E5E",
+    alignSelf: "flex-start",
+    marginTop: 0,
+    marginHorizontal: 30,
+    fontSize: 14,
   },
-  description: {
-    fontSize: 16,
-    color: "#696969",
-    marginTop: 10,
-    textAlign: "center",
+  divider: {
+    backgroundColor: "#C0C0C0",
+    width: Layout.window.width - 60,
+    margin: 20,
   },
-  buttonContainer: {
-    marginTop: 10,
-    height: 45,
+  socialLinks: {
+    flex: 1,
+    alignItems: "flex-start",
     flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    marginBottom: 20,
-    width: 250,
-    borderRadius: 30,
-    backgroundColor: "#cc0033",
+    width: Layout.window.width,
+    marginLeft: 40,
+  },
+  iconContainer: {
+    paddingHorizontal: 8,
+    paddingVertical: 10,
   },
 });
+
+export default ProfileScreen;

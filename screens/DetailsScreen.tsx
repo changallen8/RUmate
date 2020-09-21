@@ -36,12 +36,7 @@ export default function DetailsScreen() {
         <Text>Message me for more info</Text>
       </View>
       <View style={{ height: 50 }}></View>
-      <Button
-        onPress={pressHandler}
-        title="Message Me"
-        color="#cc0033"
-        accessibilityLabel="Learn more about this purple button"
-      />
+      <Button onPress={pressHandler} title="Message Me" color="#cc0033" />
     </Tile>
   );
 }
